@@ -21,7 +21,7 @@ class AppDependencies {
         userDefaultsDatasource: userDefaultsDatasource
     )
 
-    lazy var taskRepository: TaskRepositoryProtocol = TaskRepository(
+    lazy var taskRepository: BookRepositoryProtocol = BookRepository(
         swiftDataDatasource: swiftDataDatasource
     )
 

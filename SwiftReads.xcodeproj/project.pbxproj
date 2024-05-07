@@ -46,7 +46,7 @@
 		327187302BB492EB00ECA2F3 /* DashboardDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3271872F2BB492EB00ECA2F3 /* DashboardDependencies.swift */; };
 		327187322BB4932E00ECA2F3 /* DashboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327187312BB4932E00ECA2F3 /* DashboardDelegate.swift */; };
 		32B354A32B9848A100740858 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B354A22B9848A100740858 /* ContentView.swift */; };
-		32B354A52B9848A100740858 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B354A42B9848A100740858 /* Task.swift */; };
+		32B354A52B9848A100740858 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B354A42B9848A100740858 /* Book.swift */; };
 		32B354AB2B9848A200740858 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B354AA2B9848A200740858 /* Preview Assets.xcassets */; };
 		32B354C42B984CB600740858 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 32B354C32B984CB600740858 /* swiftgen.yml */; };
 		32B354C62B984CEC00740858 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B354C52B984CEC00740858 /* Images.xcassets */; };
@@ -103,8 +103,8 @@
 		32B3554C2B98797800740858 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 32B3554B2B98797800740858 /* GoogleSignInSwift */; };
 		32B3554E2B987A7C00740858 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B3554D2B987A7C00740858 /* UIApplicationExtension.swift */; };
 		32B355512B987BA600740858 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B355502B987BA600740858 /* SignInViewModel.swift */; };
-		32B355532B988CA500740858 /* TaskRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B355522B988CA500740858 /* TaskRepositoryProtocol.swift */; };
-		32B355552B988CD100740858 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B355542B988CD100740858 /* TaskRepository.swift */; };
+		32B355532B988CA500740858 /* BookRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B355522B988CA500740858 /* BookRepositoryProtocol.swift */; };
+		32B355552B988CD100740858 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B355542B988CD100740858 /* BookRepository.swift */; };
 		32B355572B988D5800740858 /* SwiftDataDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B355562B988D5800740858 /* SwiftDataDatasource.swift */; };
 		32B355592B98A46100740858 /* Purchases.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 32B355582B98A46100740858 /* Purchases.storekit */; };
 		32B3555E2B98A98C00740858 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3555D2B98A98C00740858 /* StoreKit.framework */; };
@@ -180,7 +180,7 @@
 		327187312BB4932E00ECA2F3 /* DashboardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDelegate.swift; sourceTree = "<group>"; };
 		32B3549D2B9848A100740858 /* SwiftReads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftReads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B354A22B9848A100740858 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		32B354A42B9848A100740858 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		32B354A42B9848A100740858 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		32B354A82B9848A200740858 /* SwiftReads.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftReads.entitlements; sourceTree = "<group>"; };
 		32B354AA2B9848A200740858 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32B354C32B984CB600740858 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
@@ -207,8 +207,8 @@
 		32B355462B9878AB00740858 /* SignInProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProviders.swift; sourceTree = "<group>"; };
 		32B3554D2B987A7C00740858 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		32B355502B987BA600740858 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
-		32B355522B988CA500740858 /* TaskRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryProtocol.swift; sourceTree = "<group>"; };
-		32B355542B988CD100740858 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		32B355522B988CA500740858 /* BookRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepositoryProtocol.swift; sourceTree = "<group>"; };
+		32B355542B988CD100740858 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		32B355562B988D5800740858 /* SwiftDataDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataDatasource.swift; sourceTree = "<group>"; };
 		32B355582B98A46100740858 /* Purchases.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Purchases.storekit; sourceTree = "<group>"; };
 		32B3555D2B98A98C00740858 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -429,7 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				32B354D82B9850D000740858 /* UserRepositoryProtocol.swift */,
-				32B355522B988CA500740858 /* TaskRepositoryProtocol.swift */,
+				32B355522B988CA500740858 /* BookRepositoryProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				32B354DA2B98514000740858 /* UserRepository.swift */,
-				32B355542B988CD100740858 /* TaskRepository.swift */,
+				32B355542B988CD100740858 /* BookRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -531,7 +531,7 @@
 		32B354BE2B984BC700740858 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				32B354A42B9848A100740858 /* Task.swift */,
+				32B354A42B9848A100740858 /* Book.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -809,7 +809,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32B355572B988D5800740858 /* SwiftDataDatasource.swift in Sources */,
-				32B355532B988CA500740858 /* TaskRepositoryProtocol.swift in Sources */,
+				32B355532B988CA500740858 /* BookRepositoryProtocol.swift in Sources */,
 				32B355332B98687500740858 /* LogoView.swift in Sources */,
 				32B3552F2B98661500740858 /* FontExtension.swift in Sources */,
 				3250F1972BAF01C200A7DEB8 /* FeaturesList.swift in Sources */,
@@ -839,7 +839,7 @@
 				32B355452B98765800740858 /* UINavigationControllerExtension.swift in Sources */,
 				3271872E2BB492DA00ECA2F3 /* DashboardManager.swift in Sources */,
 				32B355312B98678400740858 /* Button.swift in Sources */,
-				32B354A52B9848A100740858 /* Task.swift in Sources */,
+				32B354A52B9848A100740858 /* Book.swift in Sources */,
 				32B354D52B98506000740858 /* DashboardView.swift in Sources */,
 				32B354D92B9850D000740858 /* UserRepositoryProtocol.swift in Sources */,
 				32B355432B9875D200740858 /* AppRouter.swift in Sources */,
@@ -856,7 +856,7 @@
 				32B355512B987BA600740858 /* SignInViewModel.swift in Sources */,
 				3250F1872BAEFD9500A7DEB8 /* PaywallView.swift in Sources */,
 				327187322BB4932E00ECA2F3 /* DashboardDelegate.swift in Sources */,
-				32B355552B988CD100740858 /* TaskRepository.swift in Sources */,
+				32B355552B988CD100740858 /* BookRepository.swift in Sources */,
 				3250F1852BAEFB5100A7DEB8 /* Checkbox.swift in Sources */,
 				32B355682B98BEA500740858 /* AnalyticsEvent.swift in Sources */,
 				32B354DD2B98517F00740858 /* UserDefaultsDatasource.swift in Sources */,

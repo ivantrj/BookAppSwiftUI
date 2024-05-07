@@ -19,20 +19,20 @@ class DashboardViewModel: ObservableObject {
         case showSettings
     }
 
-    @Published private(set) var tasks: [TodoTask] = []
+    @Published private(set) var tasks: [Book] = []
     @Published var isPaywallShown = false
     @Published var wasPaywallShown = false
     @Published var isShowingAddAlert = false
     @Published var newTaskText: String = ""
 
-    let taskRepository: TaskRepositoryProtocol
+    let taskRepository: BookRepositoryProtocol
     private let onEvent: (Event) -> ()
 
-    var finishedTasks: [TodoTask] {
+    var finishedTasks: [Book] {
         tasks.filter(\.isComplete)
     }
 
-    var unfinishedTasks: [TodoTask] {
+    var unfinishedTasks: [Book] {
         tasks.filter({ !$0.isComplete })
     }
 
@@ -41,7 +41,7 @@ class DashboardViewModel: ObservableObject {
     }
 
     init(
-        taskRepository: TaskRepositoryProtocol,
+        taskRepository: BookRepositoryProtocol,
         onEvent: @escaping (Event) -> Void
     ) {
         self.taskRepository = taskRepository
@@ -66,7 +66,7 @@ class DashboardViewModel: ObservableObject {
         await SubscriptionService.shared.loadProStatus()
         await MainActor.run {
             withAnimation {
-                tasks = taskRepository.getAllTasks()
+                tasks = taskRepository.getAllBooks()
                     .sorted(by: {$0.date > $1.date})
             }
         }
@@ -80,9 +80,9 @@ class DashboardViewModel: ObservableObject {
         isPaywallShown.toggle()
     }
 
-    func onTaskTapped(task: TodoTask) {
+    func onTaskTapped(task: Book) {
         withAnimation {
-            taskRepository.toggleCompletion(task: task)
+            taskRepository.toggleCompletion(book: task)
             objectWillChange.send()
         }
     }
@@ -93,13 +93,13 @@ class DashboardViewModel: ObservableObject {
 
     func onCreateNewTask() {
         AnalyticsService.shared.log(event: .newTaskCreated)
-        let task = TodoTask(
+        let task = Book(
             name: newTaskText,
             date: Date(),
             isComplete: false
         )
         newTaskText = ""
-        taskRepository.create(task: task)
+        taskRepository.create(book: task)
         
         Task {
             await loadData()

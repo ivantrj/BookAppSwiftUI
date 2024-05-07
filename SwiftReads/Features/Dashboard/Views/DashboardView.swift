@@ -22,38 +22,45 @@ struct DashboardView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    if !viewModel.isProUser {
-                        makeCard(image: "trophy", title: "Upgrade to SwiftReads Pro") {
-                            viewModel.showPaywall()
-                        }
-                    } else {
-                        makeCard(image: "checkmark.circle.fill", title: "Enjoy your Pro features!")
-                    }
-                    Divider()
-                    VStack(alignment: .leading) {
-                        Text("Scheduled tasks")
-                        ForEach(viewModel.unfinishedTasks, id: \.id) { task in
-                            makeCard(image: "circle", title: task.name) {
-                                viewModel.onTaskTapped(task: task)
-                            }
-                        }
-                    }
-                    if !viewModel.finishedTasks.isEmpty {
-                        Divider()
-                        VStack(alignment: .leading) {
-                            Text("Finished tasks")
-                            ForEach(viewModel.finishedTasks, id: \.id) { task in
-                                makeCard(image: "circle.inset.filled", title: task.name) {
-                                    viewModel.onTaskTapped(task: task)
-                                }
-                            }
+                VStack(alignment: .leading) {
+                    ForEach(viewModel.unfinishedTasks, id: \.id) { task in
+                        makeCard(image: "circle", title: task.name){
+                            viewModel.onTaskTapped(task: task)
                         }
                     }
                 }
+//                VStack(alignment: .leading, spacing: 16) {
+//                    if !viewModel.isProUser {
+//                        makeCard(image: "trophy", title: "Upgrade to SwiftReads Pro") {
+//                            viewModel.showPaywall()
+//                        }
+//                    } else {
+//                        makeCard(image: "checkmark.circle.fill", title: "Enjoy your Pro features!")
+//                    }
+//                    Divider()
+//                    VStack(alignment: .leading) {
+//                        Text("Scheduled tasks")
+//                        ForEach(viewModel.unfinishedTasks, id: \.id) { task in
+//                            makeCard(image: "circle", title: task.name) {
+//                                viewModel.onTaskTapped(task: task)
+//                            }
+//                        }
+//                    }
+//                    if !viewModel.finishedTasks.isEmpty {
+//                        Divider()
+//                        VStack(alignment: .leading) {
+//                            Text("Finished tasks")
+//                            ForEach(viewModel.finishedTasks, id: \.id) { task in
+//                                makeCard(image: "circle.inset.filled", title: task.name) {
+//                                    viewModel.onTaskTapped(task: task)
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
                 .padding(16)
             }
-            .navigationTitle("Dashboard")
+            .navigationTitle("Inbox")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -84,8 +91,8 @@ struct DashboardView: View {
         .onAppear(perform: {
             viewModel.onAppear()
         })
-        .alert("Create new task", isPresented: $viewModel.isShowingAddAlert) {
-            TextField("Enter task text", text: $viewModel.newTaskText)
+        .alert("Add New Book", isPresented: $viewModel.isShowingAddAlert) {
+            TextField("Enter book name", text: $viewModel.newTaskText)
             Button("OK", action: {
                 viewModel.onCreateNewTask()
             })
@@ -105,7 +112,7 @@ struct DashboardView: View {
                 HStack {
                     Image(systemName: "plus.circle")
                         .foregroundStyle(Asset.Colors.appPrimary.swiftUIColor)
-                    Text("Add new task")
+                    Text("Add new book")
                     Spacer()
                 }
             }

@@ -26,11 +26,11 @@ struct ContentView: View {
         TabView {
             DashboardView(viewModel: dashboardViewModel)
                 .tabItem {
-                    Label("Dashboard", systemImage: "house.fill")
+                    Label("Inbox", systemImage: "tray.fill")
                 }
             ComponentsView()
                 .tabItem {
-                    Label("UI Components", systemImage: "batteryblock")
+                    Label("Library", systemImage: "books.vertical.fill")
                 }
         }
         .tint(Asset.Colors.appPrimary.swiftUIColor)

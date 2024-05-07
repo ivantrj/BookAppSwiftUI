@@ -18,7 +18,7 @@ class SwiftDataDatasource {
     func getModelContainer() -> ModelContainer? {
         do {
             return try ModelContainer(
-                for: TodoTask.self // Add more model types here (e.g. for: TodoTask.self, User.self, Post.self)
+                for: Book.self // Add more model types here (e.g. for: TodoTask.self, User.self, Post.self)
             )
         } catch let error {
             print(error.localizedDescription)

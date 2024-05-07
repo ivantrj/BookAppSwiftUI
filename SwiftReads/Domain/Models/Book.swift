@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class TodoTask {
+final class Book {
     var name: String
     var date: Date
     var isComplete: Bool
