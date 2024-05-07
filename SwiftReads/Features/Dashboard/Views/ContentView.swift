@@ -28,7 +28,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Inbox", systemImage: "tray.fill")
                 }
-            ComponentsView()
+            LibraryView()
                 .tabItem {
                     Label("Library", systemImage: "books.vertical.fill")
                 }

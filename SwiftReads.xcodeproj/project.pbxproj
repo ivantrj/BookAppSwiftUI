@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CF2336A2BEA480C00C4FB20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CF233692BEA480C00C4FB20 /* GoogleService-Info.plist */; };
+		2CF2336F2BEA5EC600C4FB20 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2336E2BEA5EC600C4FB20 /* LibraryView.swift */; };
 		32082D702BB01A6300A1814F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32082D6F2BB01A6300A1814F /* WidgetKit.framework */; };
 		32082D722BB01A6300A1814F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32082D712BB01A6300A1814F /* SwiftUI.framework */; };
 		32082D752BB01A6300A1814F /* SwiftReadsWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32082D742BB01A6300A1814F /* SwiftReadsWidgetsBundle.swift */; };
@@ -140,6 +141,7 @@
 
 /* Begin PBXFileReference section */
 		2CF233692BEA480C00C4FB20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2CF2336E2BEA5EC600C4FB20 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		32082D6E2BB01A6300A1814F /* SwiftReadsWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SwiftReadsWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		32082D6F2BB01A6300A1814F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		32082D712BB01A6300A1814F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -271,6 +273,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CF2336B2BEA5E9F00C4FB20 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				2CF2336D2BEA5EB600C4FB20 /* View models */,
+				2CF2336C2BEA5EB200C4FB20 /* Views */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		2CF2336C2BEA5EB200C4FB20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CF2336E2BEA5EC600C4FB20 /* LibraryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CF2336D2BEA5EB600C4FB20 /* View models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View models";
+			sourceTree = "<group>";
+		};
 		32082D732BB01A6300A1814F /* SwiftReadsWidgets */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +532,7 @@
 				32B355612B98B0C000740858 /* Settings */,
 				32B355232B98630200740858 /* Purchases */,
 				32B354BF2B984C2400740858 /* Dashboard */,
+				2CF2336B2BEA5E9F00C4FB20 /* Library */,
 				32B354BC2B984BAD00740858 /* Auth */,
 			);
 			path = Features;
@@ -824,6 +851,7 @@
 				32082D892BB0268700A1814F /* AboutAuthorView.swift in Sources */,
 				32B355602B98AA3600740858 /* SubscriptionService.swift in Sources */,
 				3250F18C2BAEFE3800A7DEB8 /* SubscriptionsRepository.swift in Sources */,
+				2CF2336F2BEA5EC600C4FB20 /* LibraryView.swift in Sources */,
 				3250F1892BAEFE0A00A7DEB8 /* PaywallViewModel.swift in Sources */,
 				32B3556A2B98BEC200740858 /* AnalyticsService.swift in Sources */,
 				3250F1922BAEFEB900A7DEB8 /* Constants.swift in Sources */,
