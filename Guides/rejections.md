@@ -3,7 +3,7 @@
 In this guide, I'll highlight common mistakes made by app developers that lead to app rejections on the App Store, along with practical tips to avoid these pitfalls and ensure a smooth approval process.
 
 > [!IMPORTANT]
-> BookApp is not just a boilerpalte, it's a service. Thank to that, you have my support when it comes to app rejections. Feel free to reach out to me on [Twitter](https://twitter.com/maros_petrus) and I will do my best to help in case your app gets rejected.
+> SwiftReads is not just a boilerpalte, it's a service. Thank to that, you have my support when it comes to app rejections. Feel free to reach out to me on [Twitter](https://twitter.com/maros_petrus) and I will do my best to help in case your app gets rejected.
 
 ## Understanding App Store Guidelines
 

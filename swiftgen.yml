@@ -1,15 +1,15 @@
 xcassets:
   - inputs:
-    - BookApp/Presentation/Resources/Colors.xcassets
-    - BookApp/Presentation/Resources/Images.xcassets
+    - SwiftReads/Presentation/Resources/Colors.xcassets
+    - SwiftReads/Presentation/Resources/Images.xcassets
     outputs:
       templateName: swift5
-      output: BookApp/Presentation/Generated/Assets.swift
+      output: SwiftReads/Presentation/Generated/Assets.swift
       params:
         publicAccess: true
 
 fonts:
-  inputs: BookApp/Presentation/Resources/Fonts
+  inputs: SwiftReads/Presentation/Resources/Fonts
   outputs:
     templateName: swift5
-    output: BookApp/Presentation/Generated/Fonts.swift
+    output: SwiftReads/Presentation/Generated/Fonts.swift

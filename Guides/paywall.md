@@ -4,7 +4,7 @@ Paywall is the most important part of your app when it comes to making money on 
 
 ## What works for Trading Tracker
 
-In BookApp codebase, you'll find a similar paywall to this one:
+In SwiftReads codebase, you'll find a similar paywall to this one:
 
 ![Paywall](https://i.imgur.com/HgYDeg3.png)
 
@@ -51,7 +51,7 @@ In my case, I offer an annual subscription and the price for this subscription i
 > For the price per period text you can change it to `Try 7-day free trial, then $1.44 / week. Cancel anytime.`
 >
 > RevenueCat - service used for In-App Purchases, offers a way to check the user is available for the introductory offer (in other words, free trial).
-> **This logic for free trials IS INCLUDED in the BookApp paywall solution.**
+> **This logic for free trials IS INCLUDED in the SwiftReads paywall solution.**
 
 ### 7. More options
 It's important to give users more options. Not directly on the paywall but with one more click. The buttom `Other options` will open a new sheet from the bottom where the user can select other subscriptions or lifetime purchase. 
@@ -76,7 +76,7 @@ Privacy policy and EULA are required links that have to be on your paywall nice 
 > With **Privacy policy** however, you have to write that yourself. Feel free to use [Trading Tracker Privacy policy](https://trading-tracker-de3a4.web.app/) and just use your app's name and other details. I would suggest to create a page in Notion and make it public via URL which you can then use in your app for **Privacy Policy** button.
 
 ### 9. Restore purchase
-Restore purchase is also a required functionality for your paywall. By not providing this button your app will get rejected! Restore purchase serves for users that already purchased the subscription or product and by finishing Restore purchase flow the products and subscriptions should be activated for them. Fortuntately, this flow is entirely handled by RevenueCat and is implemented in BookApp so you don't have to really worry about it.
+Restore purchase is also a required functionality for your paywall. By not providing this button your app will get rejected! Restore purchase serves for users that already purchased the subscription or product and by finishing Restore purchase flow the products and subscriptions should be activated for them. Fortuntately, this flow is entirely handled by RevenueCat and is implemented in SwiftReads so you don't have to really worry about it.
 
 > [!IMPORTANT]
 > ### Experimenting with your paywall

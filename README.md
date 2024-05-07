@@ -1,8 +1,8 @@
-# Welcome to BookApp 👋
+# Welcome to SwiftReads 👋
 
 Let's get started, shall we? 
 
-As you probably already know, BookApp is not just a boilerplate. It's a service. In this repository, you'll find the project you can use to bootstrap your new product, valuable guides with tips & tricks that are already proven by me and other developers, my support in case you will face an app rejection or any kind of questions you might have regarding making money on the AppStore.
+As you probably already know, SwiftReads is not just a boilerplate. It's a service. In this repository, you'll find the project you can use to bootstrap your new product, valuable guides with tips & tricks that are already proven by me and other developers, my support in case you will face an app rejection or any kind of questions you might have regarding making money on the AppStore.
 
 ## Setup guide
 Follow [this documentation to start](https://www.swiftsail.dev/docs/getting-started/introduction) 
@@ -24,4 +24,4 @@ Before you even start working on your new project, make sure to go through these
 - [ ] Implement analytics
 - [ ] Create your app icon
 - [ ] Test your In-App Purchases
-- [ ] Use production API keys# BookAppSwiftUI
+- [ ] Use production API keys# SwiftReadsSwiftUI

@@ -27,7 +27,7 @@ After you release your MVP and gain some traction, you can easily implement more
 > [!TIP]
 > ### Implementing new features
 > The mistake I made was that I built features that nobody asked for. I wasted so much time by building useless features. Make sure to have an easy to use feedback solution in your app so the users can reach out and request new features.
-> Use solutions like [WishKit](https://www.wishkit.io/) by [Martin Lasek](https://twitter.com/MartinLasek) (Coming soon to BookApp codebase!) to gather valuable feedback. Implement features based on this feedback. You'll thank yourself in the future.
+> Use solutions like [WishKit](https://www.wishkit.io/) by [Martin Lasek](https://twitter.com/MartinLasek) (Coming soon to SwiftReads codebase!) to gather valuable feedback. Implement features based on this feedback. You'll thank yourself in the future.
 
 ## Do not quit
 
@@ -60,4 +60,4 @@ We have no downloads and sales for days and weeks. And so we quit because the ap
 
 The quote from above says it all. Adjust your expectations according to that. With that being said, if you for whatever reason won't be in the 17% that make it, learn to move on quickly.
 
-Use it as a learning experience and build something else. The goal of BookApp and indie development in general is to build quickly, validate, iterate when it makes sense. If your validation shows that it doesn't make sense to continue building, quit the project. Move on to the next one.
+Use it as a learning experience and build something else. The goal of SwiftReads and indie development in general is to build quickly, validate, iterate when it makes sense. If your validation shows that it doesn't make sense to continue building, quit the project. Move on to the next one.

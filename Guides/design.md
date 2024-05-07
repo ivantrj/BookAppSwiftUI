@@ -43,7 +43,7 @@ While the Code First approach offers speed and agility in development, it's esse
 > ### iOS Design System
 > Apple has invested significant resources in developing and refining their design guidelines, ensuring consistency, accessibility, and familiarity across the iOS ecosystem. And so you should really focus on using as many native components as possible. 
 >
-> BookApp keeps that in mind and works only with native components like NavigationBar or TabBar to provide the familiar navigation and user experience. 
+> SwiftReads keeps that in mind and works only with native components like NavigationBar or TabBar to provide the familiar navigation and user experience. 
 > Not to say that you shouldn't customize the native components. Feel free to use system colors or even your own colors if needed.
 >
 > By creating your own custom components you're pretty much wasting too much time and skipping on what iOS provides.
