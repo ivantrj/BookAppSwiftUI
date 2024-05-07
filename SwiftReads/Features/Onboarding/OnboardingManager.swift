@@ -2,7 +2,7 @@
 //  File.swift
 //  
 //
-//  Created by Maros Petrus on 30/06/2023.
+//  Created by Ivan Trajanovski
 //
 
 import UIKit

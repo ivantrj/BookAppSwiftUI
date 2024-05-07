@@ -41,7 +41,7 @@ struct SettingsView: View {
                 .scrollContentBackground(.hidden)
                 Spacer()
                 VStack {
-                    Text("Made by Maros Petrus")
+                    Text("Made by Ivan Trj")
                     Text("Version \(viewModel.versionString)")
                 }
                 .frame(maxWidth: .infinity)
