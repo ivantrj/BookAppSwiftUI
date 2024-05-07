@@ -14,11 +14,11 @@ class Constants {
     static let appName = "SwiftReads"
     static let privacyPolicyUrl = "https://google.com" /// IMPORTANT: set this to the correct URL
     static let appleEulaUrl = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
-    static let supportEmail = "me@marospetrus.com"
+    static let supportEmail = "ivantrjdev@gmail.com"
 
     /// Socials
-    static let instagram = "https://instagram.com/maros_iosdev"
-    static let twitter = "https://twitter.com/maros_petrus"
+    static let instagram = "https://instagram.com/ivantrjdev"
+    static let twitter = "https://twitter.com/ivan_trj"
     static let twitch = "https://twitch.com/maros_petrus"
 
     /// API Keys

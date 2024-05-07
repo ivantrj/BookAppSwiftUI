@@ -37,11 +37,11 @@ struct AboutAuthorView: View {
                             .frame(width: 150, height: 150)
                             .clipShape(Circle())
                             .overlay(Circle().stroke(Color.black, lineWidth: 2))
-                        Text("Hi, I am Maros, the creator of this app.")
+                        Text("Hi, I am Ivan, the developer of this app.")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color(uiColor: .label))
-                        Text("As a day trader myself, I built this app to suit my needs and requirements. I use the app every day to see how my strategy is evolving, what's working and what's not working. My objective is to become a full-time independent developer and to provide additional features to my apps.\n\nYou're helping me in my quest by subscribing to this app.\n\nPlease feel free to reach out to me at any moment via this app or my social media accounts.")
+                        Text("As a passionate indie developer and software engineer, I created this app to meet my own needs and aspirations. \n\nUsing it daily helps me refine my skills, understand what works, and what doesn't in my development journey. \n\nYour support means the world to me as I strive to grow in this field and offer more features to my users.\n\nPlease don't hesitate to reach out to me through this app or my social media channels. \n\nYour feedback and engagement are greatly appreciated.")
                             .foregroundColor(Color(uiColor: .label))
                         HStack(spacing: 16) {
                             Spacer()
