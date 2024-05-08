@@ -1,5 +1,5 @@
 //
-//  TaskRepository.swift
+//  BookRepository.swift
 //  SwiftReads
 //
 //  Created by Ivan Trajanovski.
@@ -29,10 +29,5 @@ class BookRepository: BookRepositoryProtocol {
     
     func delete(book: Book) {
         swiftDataDatasource.delete(type: Book.self, model: book)
-    }
-    
-    func toggleCompletion(book: Book) {
-        book.isComplete.toggle()
-        save()
     }
 }

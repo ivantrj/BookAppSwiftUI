@@ -32,7 +32,7 @@ struct ContentView: View {
                 }
                 .tag(0)
             
-            LibraryView()
+            LibraryView(viewModel: dashboardViewModel)
                 .tabItem {
                     Label("Library", systemImage: "books.vertical.fill")
                 }

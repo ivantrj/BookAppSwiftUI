@@ -21,7 +21,7 @@ class AppDependencies {
         userDefaultsDatasource: userDefaultsDatasource
     )
 
-    lazy var taskRepository: BookRepositoryProtocol = BookRepository(
+    lazy var bookRepository: BookRepositoryProtocol = BookRepository(
         swiftDataDatasource: swiftDataDatasource
     )
 
@@ -32,6 +32,6 @@ class AppDependencies {
 
     // MARK: Dashboard
     lazy var dashboardDependencies = DashboardDependencies(
-        taskRepository: taskRepository
+        bookRepository: bookRepository
     )
 }

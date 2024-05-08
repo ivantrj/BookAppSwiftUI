@@ -10,11 +10,11 @@ import RevenueCat
 import RevenueCatUI
 
 struct DashboardView: View {
-
+    
     @Environment(\.colorScheme) var colorScheme
-
+    
     @ObservedObject var viewModel: DashboardViewModel
-
+    
     /// This code is to showcase the basic flow and separation of business logic from UI.
     /// Replace this code with your own UI and logic your project requires.
     ///
@@ -23,11 +23,10 @@ struct DashboardView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
-                    ForEach(viewModel.unfinishedTasks, id: \.id) { task in
-                        makeCard(image: "circle", title: task.name){
-                            viewModel.onTaskTapped(task: task)
-                        }
+                    ForEach(filteredBooks, id: \.id) { book in
+                        makeCard(image: "book", title: book.name, status: book.status)
                     }
+                    .onDelete(perform: deleteBook)
                 }
                 .padding(16)
             }
@@ -55,41 +54,12 @@ struct DashboardView: View {
         .onAppear(perform: {
             viewModel.onAppear()
         })
-        .alert("Add New Book", isPresented: $viewModel.isShowingAddAlert) {
-            TextField("Enter book name", text: $viewModel.newTaskText)
-            Button("OK", action: {
-                viewModel.onCreateNewBook()
-            })
-        } message: {
-            Text("")
-        }
         .fullScreenCover(isPresented: $viewModel.isPaywallShown, content: {
             SubscriptionService.shared.paywallView
         })
     }
-
-    private func makeAddNewCard() -> some View {
-        Button {
-            viewModel.onAddButtonTapped()
-        } label: {
-            VStack {
-                HStack {
-                    Image(systemName: "plus.circle")
-                        .foregroundStyle(Asset.Colors.appPrimary.swiftUIColor)
-                    Text("Add new book")
-                    Spacer()
-                }
-            }
-            .padding(16)
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(Asset.Colors.appPrimary.swiftUIColor, style: .init(lineWidth: 2, lineCap: .round, lineJoin: .round, miterLimit: .zero, dash: [5], dashPhase: 2))
-                    .shadow(color: .black.opacity(0.1), radius: 8)
-            )
-        }
-    }
-
-    private func makeCard(image: String, title: String, action: (() -> ())? = nil) -> some View {
+    
+    private func makeCard(image: String, title: String, status: Status ,action: (() -> ())? = nil) -> some View {
         Button {
             action?()
         } label: {
@@ -98,7 +68,11 @@ struct DashboardView: View {
                     Image(systemName: image)
                         .foregroundStyle(Asset.Colors.appPrimary.swiftUIColor)
                     Text(title)
+                        .font(.title2)
+                        .foregroundStyle(Color.black)
                     Spacer()
+                    Text("\(status)")
+                        .font(.caption)
                 }
             }
             .padding(16)
@@ -108,6 +82,15 @@ struct DashboardView: View {
                     .shadow(color: .black.opacity(0.1), radius: 8)
             )
         }
-        .disabled(action == nil)
+    }
+    
+    private var filteredBooks: [Book] {
+        viewModel.books.filter { $0.status == .wantToRead }
+    }
+    
+    private func deleteBook(at offsets: IndexSet) {
+        for index in offsets {
+            viewModel.deleteBook(filteredBooks[index])
+        }
     }
 }

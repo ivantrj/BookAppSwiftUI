@@ -31,7 +31,7 @@ struct DashboardManager {
 
     public func start() {
         let dashboardViewModel = DashboardViewModel(
-            taskRepository: dependencies.taskRepository,
+            bookRepository: dependencies.bookRepository,
             onEvent: { event in
                 switch event {
                 case .showSettings:

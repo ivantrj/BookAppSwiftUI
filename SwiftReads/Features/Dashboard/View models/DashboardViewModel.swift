@@ -19,20 +19,17 @@ class DashboardViewModel: ObservableObject {
         case showSettings
     }
     
-    @Published private(set) var tasks: [Book] = []
+    @Published private(set) var books: [Book] = []
     @Published var isPaywallShown = false
     @Published var wasPaywallShown = false
-    @Published var newTaskText: String = ""
+    @Published var newBookText: String = ""
     
     let bookRepository: BookRepositoryProtocol
     private let onEvent: (Event) -> ()
     
-    var finishedTasks: [Book] {
-        tasks.filter(\.isComplete)
-    }
     
-    var unfinishedTasks: [Book] {
-        tasks.filter({ !$0.isComplete })
+    var fetchBooks: [Book] {
+        books
     }
     
     var isProUser: Bool {
@@ -65,8 +62,8 @@ class DashboardViewModel: ObservableObject {
         await SubscriptionService.shared.loadProStatus()
         await MainActor.run {
             withAnimation {
-                tasks = bookRepository.getAllBooks()
-                    .sorted(by: {$0.date > $1.date})
+                books = bookRepository.getAllBooks()
+//                    .sorted(by: {$0.date > $1.date})
             }
         }
     }
@@ -79,22 +76,19 @@ class DashboardViewModel: ObservableObject {
         isPaywallShown.toggle()
     }
     
-    func onTaskTapped(task: Book) {
-        withAnimation {
-            bookRepository.toggleCompletion(book: task)
-            objectWillChange.send()
-        }
-    }
-    
-    func onCreateNewBook() {
+    func onCreateNewBook(status: Status? = nil) {
         AnalyticsService.shared.log(event: .newBookCreated)
-        let task = Book(
-            name: newTaskText,
-            date: Date(),
-            isComplete: false
+        _ = status ?? .wantToRead
+        
+        let newBook = Book(
+            name: newBookText,
+            author: "",
+            genre: "",
+            status: .wantToRead,
+            date: Date()
         )
-        newTaskText = ""
-        bookRepository.create(book: task)
+        newBookText = ""
+        bookRepository.create(book: newBook)
         
         Task {
             await loadData()
@@ -102,7 +96,7 @@ class DashboardViewModel: ObservableObject {
             /// Useful tip: Request review after some core action
             
             await MainActor.run {
-                if tasks.count == 1 {
+                if books.count == 1 {
                     SKStoreReviewController.requestReviewInCurrentScene()
                 }
             }

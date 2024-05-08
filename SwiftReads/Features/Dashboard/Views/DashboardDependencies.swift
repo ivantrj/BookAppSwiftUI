@@ -9,9 +9,9 @@ import Foundation
 
 class DashboardDependencies {
 
-    let taskRepository: BookRepositoryProtocol
+    let bookRepository: BookRepositoryProtocol
 
-    init(taskRepository: BookRepositoryProtocol) {
-        self.taskRepository = taskRepository
+    init(bookRepository: BookRepositoryProtocol) {
+        self.bookRepository = bookRepository
     }
 }

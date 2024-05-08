@@ -1,5 +1,5 @@
 //
-//  TaskRepositoryProtocol.swift
+//  BookRepositoryProtocol.swift
 //  SwiftReads
 //
 //  Created by Ivan Trajanovski.
@@ -12,5 +12,4 @@ protocol BookRepositoryProtocol {
     func create(book: Book)
     func save()
     func delete(book: Book)
-    func toggleCompletion(book: Book)
 }
