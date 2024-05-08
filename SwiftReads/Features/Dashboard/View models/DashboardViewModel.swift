@@ -18,28 +18,28 @@ class DashboardViewModel: ObservableObject {
     enum Event {
         case showSettings
     }
-
+    
     @Published private(set) var tasks: [Book] = []
     @Published var isPaywallShown = false
     @Published var wasPaywallShown = false
     @Published var isShowingAddAlert = false
     @Published var newTaskText: String = ""
-
+    
     let taskRepository: BookRepositoryProtocol
     private let onEvent: (Event) -> ()
-
+    
     var finishedTasks: [Book] {
         tasks.filter(\.isComplete)
     }
-
+    
     var unfinishedTasks: [Book] {
         tasks.filter({ !$0.isComplete })
     }
-
+    
     var isProUser: Bool {
         SubscriptionService.shared.isProUser
     }
-
+    
     init(
         taskRepository: BookRepositoryProtocol,
         onEvent: @escaping (Event) -> Void
@@ -47,7 +47,7 @@ class DashboardViewModel: ObservableObject {
         self.taskRepository = taskRepository
         self.onEvent = onEvent
     }
-
+    
     func onAppear() {
         Task {
             await loadData()
@@ -61,7 +61,7 @@ class DashboardViewModel: ObservableObject {
             }
         }
     }
-
+    
     func loadData() async {
         await SubscriptionService.shared.loadProStatus()
         await MainActor.run {
@@ -71,26 +71,26 @@ class DashboardViewModel: ObservableObject {
             }
         }
     }
-
+    
     func onSettingsButtonTap() {
         onEvent(.showSettings)
     }
-
+    
     func showPaywall() {
         isPaywallShown.toggle()
     }
-
+    
     func onTaskTapped(task: Book) {
         withAnimation {
             taskRepository.toggleCompletion(book: task)
             objectWillChange.send()
         }
     }
-
+    
     func onAddButtonTapped() {
         isShowingAddAlert = true
     }
-
+    
     func onCreateNewTask() {
         AnalyticsService.shared.log(event: .newTaskCreated)
         let task = Book(
@@ -103,14 +103,22 @@ class DashboardViewModel: ObservableObject {
         
         Task {
             await loadData()
-
+            
             /// Useful tip: Request review after some core action
-
+            
             await MainActor.run {
                 if tasks.count == 1 {
                     SKStoreReviewController.requestReviewInCurrentScene()
                 }
             }
+        }
+    }
+    
+    func deleteTask(_ task: Book) {
+        taskRepository.delete(book: task)
+        
+        Task {
+            await loadData()
         }
     }
 }

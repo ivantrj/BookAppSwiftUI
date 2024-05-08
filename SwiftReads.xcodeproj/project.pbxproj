@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2CF2336A2BEA480C00C4FB20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CF233692BEA480C00C4FB20 /* GoogleService-Info.plist */; };
 		2CF2336F2BEA5EC600C4FB20 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2336E2BEA5EC600C4FB20 /* LibraryView.swift */; };
+		2CF233712BEB70D600C4FB20 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF233702BEB70D600C4FB20 /* AddBookView.swift */; };
 		32082D702BB01A6300A1814F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32082D6F2BB01A6300A1814F /* WidgetKit.framework */; };
 		32082D722BB01A6300A1814F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32082D712BB01A6300A1814F /* SwiftUI.framework */; };
 		32082D752BB01A6300A1814F /* SwiftReadsWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32082D742BB01A6300A1814F /* SwiftReadsWidgetsBundle.swift */; };
@@ -142,6 +143,7 @@
 /* Begin PBXFileReference section */
 		2CF233692BEA480C00C4FB20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CF2336E2BEA5EC600C4FB20 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		2CF233702BEB70D600C4FB20 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		32082D6E2BB01A6300A1814F /* SwiftReadsWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SwiftReadsWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		32082D6F2BB01A6300A1814F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		32082D712BB01A6300A1814F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -566,6 +568,7 @@
 		32B354BF2B984C2400740858 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				2CF233702BEB70D600C4FB20 /* AddBookView.swift */,
 				32B355342B98708500740858 /* View models */,
 				32B354C02B984C2B00740858 /* Views */,
 				3271872D2BB492DA00ECA2F3 /* DashboardManager.swift */,
@@ -838,6 +841,7 @@
 				32B355572B988D5800740858 /* SwiftDataDatasource.swift in Sources */,
 				32B355532B988CA500740858 /* BookRepositoryProtocol.swift in Sources */,
 				32B355332B98687500740858 /* LogoView.swift in Sources */,
+				2CF233712BEB70D600C4FB20 /* AddBookView.swift in Sources */,
 				32B3552F2B98661500740858 /* FontExtension.swift in Sources */,
 				3250F1972BAF01C200A7DEB8 /* FeaturesList.swift in Sources */,
 				327187242BB4868D00ECA2F3 /* OnboardingManager.swift in Sources */,

@@ -29,47 +29,11 @@ struct DashboardView: View {
                         }
                     }
                 }
-//                VStack(alignment: .leading, spacing: 16) {
-//                    if !viewModel.isProUser {
-//                        makeCard(image: "trophy", title: "Upgrade to SwiftReads Pro") {
-//                            viewModel.showPaywall()
-//                        }
-//                    } else {
-//                        makeCard(image: "checkmark.circle.fill", title: "Enjoy your Pro features!")
-//                    }
-//                    Divider()
-//                    VStack(alignment: .leading) {
-//                        Text("Scheduled tasks")
-//                        ForEach(viewModel.unfinishedTasks, id: \.id) { task in
-//                            makeCard(image: "circle", title: task.name) {
-//                                viewModel.onTaskTapped(task: task)
-//                            }
-//                        }
-//                    }
-//                    if !viewModel.finishedTasks.isEmpty {
-//                        Divider()
-//                        VStack(alignment: .leading) {
-//                            Text("Finished tasks")
-//                            ForEach(viewModel.finishedTasks, id: \.id) { task in
-//                                makeCard(image: "circle.inset.filled", title: task.name) {
-//                                    viewModel.onTaskTapped(task: task)
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
                 .padding(16)
             }
             .navigationTitle("Inbox")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        viewModel.onAddButtonTapped()
-                    } label: {
-                        Image(systemName: "plus.circle")
-                    }
-                }
                 if !viewModel.isProUser {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {

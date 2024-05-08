@@ -15,6 +15,8 @@ import SwiftData
 ///
 struct ContentView: View {
 
+    @State private var isShowingAddBookSheet = false
+
     init(dashboardViewModel: DashboardViewModel) {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: Asset.Colors.appPrimary.color]
         self.dashboardViewModel = dashboardViewModel
@@ -28,13 +30,33 @@ struct ContentView: View {
                 .tabItem {
                     Label("Inbox", systemImage: "tray.fill")
                 }
+                .tag(0)
+            
             LibraryView()
                 .tabItem {
                     Label("Library", systemImage: "books.vertical.fill")
                 }
+                .tag(1)
         }
         .tint(Asset.Colors.appPrimary.swiftUIColor)
         .font(.defaultText.regular)
+        .sheet(isPresented: $isShowingAddBookSheet) {
+            AddBookView()
+        }
+        .overlay(
+            Button {
+                isShowingAddBookSheet.toggle()
+            } label: {
+                Image(systemName: "plus.circle.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 48, height: 48)
+                    .foregroundColor(Asset.Colors.appPrimary.swiftUIColor)
+                    .offset(y: -10) // Adjust the vertical position as needed
+            }
+            .frame(maxWidth: .infinity, alignment: .center),
+            alignment: .bottom
+        )
     }
 }
 
@@ -192,20 +214,20 @@ struct ComponentsView: View {
                         .font(.title.medium)
                     Accordion(items: [
                         AccordionItem(
-                            title: "Why should I choose SwiftReads?",
-                            description: "Because SwiftReads is not just another boilerplate template. Yes, you'll get the full Xcode project will all the features and UI components. But you'll also get my years of experience in selling subscriptions and making money on the AppStore. I will share with you everything I know about selling strategies like when to show the paywall, what subscription to offer, when to ask for review, how to setup your keywords, title, subtitle of your app, and many more..."
+                            title: "Why should I choose SwiftSail?",
+                            description: "Because SwiftSail is not just another boilerplate template. Yes, you'll get the full Xcode project will all the features and UI components. But you'll also get my years of experience in selling subscriptions and making money on the AppStore. I will share with you everything I know about selling strategies like when to show the paywall, what subscription to offer, when to ask for review, how to setup your keywords, title, subtitle of your app, and many more..."
                         ),
                         AccordionItem(
                             title: "What if I want a slightly different tech stack?",
                             description: "In this case, you can email me at me@marospetrus.com and I'll take care of the next steps!"
                         ),
                         AccordionItem(
-                            title: "Is SwiftReads for beginners?",
-                            description: "Of course it is! SwiftReads Xcode project is built on top of the clean architecture and best coding practices. I would encourage everyone to dive into that! It will help tremendously not only your project but also your career as iOS Developer as many companies require some knowledge of the clean architecture and SOLID principles."
+                            title: "Is SwiftSail for beginners?",
+                            description: "Of course it is! SwiftSail Xcode project is built on top of the clean architecture and best coding practices. I would encourage everyone to dive into that! It will help tremendously not only your project but also your career as iOS Developer as many companies require some knowledge of the clean architecture and SOLID principles."
                         ),
                         AccordionItem(
-                            title: "Is SwiftReads being continuosly updated?",
-                            description: "Yes, I am constantly working on improving this code based on my current needs for my apps. SwiftReads gets updates based on customers feedback, new iOS versions, bug fixes, and so on..."
+                            title: "Is SwiftSail being continuosly updated?",
+                            description: "Yes, I am constantly working on improving this code based on my current needs for my apps. SwiftSail gets updates based on customers feedback, new iOS versions, bug fixes, and so on..."
                         )
                     ])
                 }
@@ -258,3 +280,4 @@ struct ComponentsView: View {
 #Preview(body: {
     ComponentsView()
 })
+
