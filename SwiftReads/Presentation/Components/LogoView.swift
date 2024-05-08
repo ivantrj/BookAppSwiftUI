@@ -10,12 +10,12 @@ import SwiftUI
 struct LogoView: View {
     var body: some View {
         HStack(spacing: 4) {
-            Image(systemName: "swift")
+            Image(systemName: "book.pages")
                 .font(.largeTitle)
                 .padding(.trailing, 4)
             Text("Swift")
             ZStack {
-                Text("Sail")
+                Text("Reads")
                     .foregroundStyle(.white)
             }
             .padding(.vertical, 2)

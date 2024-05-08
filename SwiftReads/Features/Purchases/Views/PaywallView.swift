@@ -25,8 +25,8 @@ public struct SailPaywallView: View {
                 VStack(spacing: 16) {
                     logoView
                     featuresView
-                    RatingView(rating: "4.7", numberOfFilledStars: 4, subtitle: "200+ reviews")
-                    reviewsView
+//                    RatingView(rating: "4.7", numberOfFilledStars: 4, subtitle: "200+ reviews")
+//                    reviewsView
                     Spacer()
                 }
                 .padding(16)
@@ -70,7 +70,7 @@ public struct SailPaywallView: View {
             Text("From SwiftReads users")
                 .fontWeight(.bold)
             Reviews(reviewItems: [
-                ReviewItem(numberOfStars: 5, title: "Streamlined trading journal", description: "Love this program! Very well laid out and it’s simple to use. Had some bugs on my end, but the developer was quick to respond and get it fixed. He always walked me through how the app works in the background to come to its totals. Definitely use it!"),
+                ReviewItem(numberOfStars: 5, title: "Streamlined book reading tracker", description: "Love this program! Very well laid out and it’s simple to use. Had some bugs on my end, but the developer was quick to respond and get it fixed. He always walked me through how the app works in the background to come to its totals. Definitely use it!"),
                 ReviewItem(numberOfStars: 5, title: "Efficient trade journal", description: "Great for tracking trades and recording P/L on a regular basis. Shows your performance and you are able to add notes to reflect on your trades. Very well put together app."),
                 ReviewItem(numberOfStars: 4, title: "Simple to use trading tool", description: "I’ve been looking for a testing journal app and enjoy the design this one has well as the widget functions. The developer was also quick to respond to any inquiries and critiques"),
                 ReviewItem(numberOfStars: 5, title: "Top-notch tracking app", description: "Better then any other trade journal app. Intuitive and straight to the point. A lot of brokers on here. Better then other platforms at this price")
@@ -80,11 +80,12 @@ public struct SailPaywallView: View {
 
     var featuresView: some View {
         FeaturesList(featuresListItems: [
-            FeaturesListItem(title: "UI Components", isProOnly: false),
-            FeaturesListItem(title: "Authentication", isProOnly: false),
-            FeaturesListItem(title: "Clean architecture", isProOnly: false),
-            FeaturesListItem(title: "Unlimited downloads", isProOnly: true),
-            FeaturesListItem(title: "Lifetime updates", isProOnly: true)
+            FeaturesListItem(title: "Book tracking", isProOnly: false),
+            FeaturesListItem(title: "Book notes", isProOnly: false),
+            FeaturesListItem(title: "Remove ads", isProOnly: false),
+            FeaturesListItem(title: "Unlimited books", isProOnly: true),
+            FeaturesListItem(title: "Priority support", isProOnly: true),
+            FeaturesListItem(title: "Support a solo developer", isProOnly: true)
         ])
     }
 
