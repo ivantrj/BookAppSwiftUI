@@ -22,10 +22,11 @@ struct LibraryView: View {
                 VStack {
                     Picker(selection: $selectedOption, label: Text("Select Option")) {
                         ForEach(filteredStatuses, id: \.self) { status in
-                            Text(status.status).tag(status)
+                            Text("\(status.status)").tag(status)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
+                    
                     
                     ForEach(filteredBooks) { book in
                         BookRow(book: book)
@@ -62,8 +63,8 @@ struct BookRow: View {
                     .font(.subheadline)
             }
             Spacer()
-            Text(book.status.status)
-                .foregroundColor(statusColor(for: book.status))
+//            Text(book.status)
+//                .foregroundColor(statusColor(for: book.status))
         }
         .padding()
         .background(Color.secondary.opacity(0.1))

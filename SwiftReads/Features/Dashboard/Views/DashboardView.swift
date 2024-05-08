@@ -9,16 +9,11 @@ import SwiftUI
 import RevenueCat
 import RevenueCatUI
 
-struct DashboardView: View {
-    
+struct DashboardView: View {    
     @Environment(\.colorScheme) var colorScheme
-    
+
     @ObservedObject var viewModel: DashboardViewModel
     
-    /// This code is to showcase the basic flow and separation of business logic from UI.
-    /// Replace this code with your own UI and logic your project requires.
-    ///
-    ///
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -59,29 +54,26 @@ struct DashboardView: View {
         })
     }
     
-    private func makeCard(image: String, title: String, status: Status ,action: (() -> ())? = nil) -> some View {
-        Button {
-            action?()
-        } label: {
-            VStack {
-                HStack {
-                    Image(systemName: image)
-                        .foregroundStyle(Asset.Colors.appPrimary.swiftUIColor)
-                    Text(title)
-                        .font(.title2)
-                        .foregroundStyle(Color.black)
-                    Spacer()
-                    Text("\(status)")
-                        .font(.caption)
-                }
+    private func makeCard(image: String, title: String, status: Status) -> some View {
+        VStack {
+            HStack {
+                Image(systemName: image)
+                    .foregroundStyle(Asset.Colors.appPrimary.swiftUIColor)
+                Text(title)
+                    .font(.title2)
+                    .foregroundStyle(Color.black)
+                Spacer()
+                Text("\(status)")
+                    .font(.caption)
             }
-            .padding(16)
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(Asset.Colors.cardBackground.swiftUIColor)
-                    .shadow(color: .black.opacity(0.1), radius: 8)
-            )
         }
+        .padding(16)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Asset.Colors.cardBackground.swiftUIColor)
+                .shadow(color: .black.opacity(0.1), radius: 8)
+        )
+        
     }
     
     private var filteredBooks: [Book] {
