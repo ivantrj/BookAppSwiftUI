@@ -41,7 +41,7 @@ struct ContentView: View {
         .tint(Asset.Colors.appPrimary.swiftUIColor)
         .font(.defaultText.regular)
         .sheet(isPresented: $isShowingAddBookSheet) {
-            AddBookView()
+            AddBookView(viewModel: dashboardViewModel)
         }
         .overlay(
             Button {

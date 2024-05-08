@@ -22,10 +22,9 @@ class DashboardViewModel: ObservableObject {
     @Published private(set) var tasks: [Book] = []
     @Published var isPaywallShown = false
     @Published var wasPaywallShown = false
-    @Published var isShowingAddAlert = false
     @Published var newTaskText: String = ""
     
-    let taskRepository: BookRepositoryProtocol
+    let bookRepository: BookRepositoryProtocol
     private let onEvent: (Event) -> ()
     
     var finishedTasks: [Book] {
@@ -41,10 +40,10 @@ class DashboardViewModel: ObservableObject {
     }
     
     init(
-        taskRepository: BookRepositoryProtocol,
+        bookRepository: BookRepositoryProtocol,
         onEvent: @escaping (Event) -> Void
     ) {
-        self.taskRepository = taskRepository
+        self.bookRepository = bookRepository
         self.onEvent = onEvent
     }
     
@@ -66,7 +65,7 @@ class DashboardViewModel: ObservableObject {
         await SubscriptionService.shared.loadProStatus()
         await MainActor.run {
             withAnimation {
-                tasks = taskRepository.getAllBooks()
+                tasks = bookRepository.getAllBooks()
                     .sorted(by: {$0.date > $1.date})
             }
         }
@@ -82,24 +81,20 @@ class DashboardViewModel: ObservableObject {
     
     func onTaskTapped(task: Book) {
         withAnimation {
-            taskRepository.toggleCompletion(book: task)
+            bookRepository.toggleCompletion(book: task)
             objectWillChange.send()
         }
     }
     
-    func onAddButtonTapped() {
-        isShowingAddAlert = true
-    }
-    
-    func onCreateNewTask() {
-        AnalyticsService.shared.log(event: .newTaskCreated)
+    func onCreateNewBook() {
+        AnalyticsService.shared.log(event: .newBookCreated)
         let task = Book(
             name: newTaskText,
             date: Date(),
             isComplete: false
         )
         newTaskText = ""
-        taskRepository.create(book: task)
+        bookRepository.create(book: task)
         
         Task {
             await loadData()
@@ -114,8 +109,8 @@ class DashboardViewModel: ObservableObject {
         }
     }
     
-    func deleteTask(_ task: Book) {
-        taskRepository.delete(book: task)
+    func deleteBook(_ task: Book) {
+        bookRepository.delete(book: task)
         
         Task {
             await loadData()

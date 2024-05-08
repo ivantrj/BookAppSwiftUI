@@ -58,7 +58,7 @@ struct DashboardView: View {
         .alert("Add New Book", isPresented: $viewModel.isShowingAddAlert) {
             TextField("Enter book name", text: $viewModel.newTaskText)
             Button("OK", action: {
-                viewModel.onCreateNewTask()
+                viewModel.onCreateNewBook()
             })
         } message: {
             Text("")

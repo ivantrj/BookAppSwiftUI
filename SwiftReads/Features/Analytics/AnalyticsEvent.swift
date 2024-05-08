@@ -8,7 +8,7 @@
 import Foundation
 
 enum AnalyticsEvent: String {
-    case newTaskCreated
+    case newBookCreated
 }
 
 enum AnalyticsPropertyKey: String {

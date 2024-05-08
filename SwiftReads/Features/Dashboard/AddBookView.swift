@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct AddBookView: View {
-    @State private var bookName = ""
-
+    @ObservedObject var viewModel: DashboardViewModel
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack(spacing: 20) {
-            SailTextField(title: "Book", placeholder: "Add New Book", text: $bookName)
+            SailTextField(title: "Book", placeholder: "Add New Book", text: $viewModel.newTaskText)
             
             
             SailButton(
                 style: .primary,
-                action: {},
-                icon: Image(systemName: "square.and.arrow.down"),
+                action: {
+                    viewModel.onCreateNewBook()
+                    presentationMode.wrappedValue.dismiss() 
+                },                icon: Image(systemName: "square.and.arrow.down"),
                 title: "Add"
             )
             
@@ -28,6 +32,6 @@ struct AddBookView: View {
     }
 }
 
-#Preview {
-    AddBookView()
-}
+//#Preview {
+//    AddBookView()
+//}
