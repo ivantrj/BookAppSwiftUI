@@ -36,7 +36,14 @@ struct LibraryView: View {
                 .padding()
             }
             .navigationTitle("Library")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(
+                trailing:
+                    Button {
+                    } label: {
+                        Image(systemName: "arrow.up.arrow.down")
+                    }
+            )
         }
     }
     
@@ -63,8 +70,8 @@ struct BookRow: View {
                     .font(.subheadline)
             }
             Spacer()
-//            Text(book.status)
-//                .foregroundColor(statusColor(for: book.status))
+            //            Text(book.status)
+            //                .foregroundColor(statusColor(for: book.status))
         }
         .padding()
         .background(Color.secondary.opacity(0.1))
