@@ -26,7 +26,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            DashboardView(viewModel: dashboardViewModel)
+            InboxView(viewModel: dashboardViewModel)
                 .tabItem {
                     Label("Inbox", systemImage: "tray.fill")
                 }

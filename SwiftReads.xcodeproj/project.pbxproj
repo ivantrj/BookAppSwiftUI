@@ -56,7 +56,7 @@
 		32B354CD2B984E2C00740858 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B354CC2B984E2C00740858 /* Colors.xcassets */; };
 		32B354D02B984E5E00740858 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B354CE2B984E5E00740858 /* Assets.swift */; };
 		32B354D12B984E5E00740858 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B354CF2B984E5E00740858 /* Fonts.swift */; };
-		32B354D52B98506000740858 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B354D42B98506000740858 /* DashboardView.swift */; };
+		32B354D52B98506000740858 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B354D42B98506000740858 /* InboxView.swift */; };
 		32B354D72B98509D00740858 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B354D62B98509D00740858 /* AppDependencies.swift */; };
 		32B354D92B9850D000740858 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B354D82B9850D000740858 /* UserRepositoryProtocol.swift */; };
 		32B354DB2B98514000740858 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B354DA2B98514000740858 /* UserRepository.swift */; };
@@ -194,7 +194,7 @@
 		32B354CC2B984E2C00740858 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		32B354CE2B984E5E00740858 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		32B354CF2B984E5E00740858 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		32B354D42B98506000740858 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		32B354D42B98506000740858 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 		32B354D62B98509D00740858 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		32B354D82B9850D000740858 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
 		32B354DA2B98514000740858 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -581,7 +581,7 @@
 			isa = PBXGroup;
 			children = (
 				32B354A22B9848A100740858 /* ContentView.swift */,
-				32B354D42B98506000740858 /* DashboardView.swift */,
+				32B354D42B98506000740858 /* InboxView.swift */,
 				3271872F2BB492EB00ECA2F3 /* DashboardDependencies.swift */,
 			);
 			path = Views;
@@ -872,7 +872,7 @@
 				3271872E2BB492DA00ECA2F3 /* DashboardManager.swift in Sources */,
 				32B355312B98678400740858 /* Button.swift in Sources */,
 				32B354A52B9848A100740858 /* Book.swift in Sources */,
-				32B354D52B98506000740858 /* DashboardView.swift in Sources */,
+				32B354D52B98506000740858 /* InboxView.swift in Sources */,
 				32B354D92B9850D000740858 /* UserRepositoryProtocol.swift in Sources */,
 				32B355432B9875D200740858 /* AppRouter.swift in Sources */,
 				32B355652B98B0D700740858 /* SettingsView.swift in Sources */,

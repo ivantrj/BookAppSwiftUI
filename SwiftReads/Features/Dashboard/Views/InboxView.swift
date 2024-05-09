@@ -9,7 +9,7 @@ import SwiftUI
 import RevenueCat
 import RevenueCatUI
 
-struct DashboardView: View {    
+struct InboxView: View {    
     @Environment(\.colorScheme) var colorScheme
 
     @ObservedObject var viewModel: DashboardViewModel
