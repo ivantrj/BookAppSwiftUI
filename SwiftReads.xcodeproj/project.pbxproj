@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C5EC80A2BECCFE900085BC3 /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EC8092BECCFE900085BC3 /* EditBookView.swift */; };
+		2C5EC80C2BECD02800085BC3 /* EditBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5EC80B2BECD02800085BC3 /* EditBookViewModel.swift */; };
 		2CF2336A2BEA480C00C4FB20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CF233692BEA480C00C4FB20 /* GoogleService-Info.plist */; };
 		2CF2336F2BEA5EC600C4FB20 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2336E2BEA5EC600C4FB20 /* LibraryView.swift */; };
 		2CF233712BEB70D600C4FB20 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF233702BEB70D600C4FB20 /* AddBookView.swift */; };
@@ -141,6 +143,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C5EC8092BECCFE900085BC3 /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
+		2C5EC80B2BECD02800085BC3 /* EditBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookViewModel.swift; sourceTree = "<group>"; };
 		2CF233692BEA480C00C4FB20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CF2336E2BEA5EC600C4FB20 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		2CF233702BEB70D600C4FB20 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
@@ -573,6 +577,8 @@
 				32B354C02B984C2B00740858 /* Views */,
 				3271872D2BB492DA00ECA2F3 /* DashboardManager.swift */,
 				327187312BB4932E00ECA2F3 /* DashboardDelegate.swift */,
+				2C5EC8092BECCFE900085BC3 /* EditBookView.swift */,
+				2C5EC80B2BECD02800085BC3 /* EditBookViewModel.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -857,6 +863,7 @@
 				3250F18C2BAEFE3800A7DEB8 /* SubscriptionsRepository.swift in Sources */,
 				2CF2336F2BEA5EC600C4FB20 /* LibraryView.swift in Sources */,
 				3250F1892BAEFE0A00A7DEB8 /* PaywallViewModel.swift in Sources */,
+				2C5EC80C2BECD02800085BC3 /* EditBookViewModel.swift in Sources */,
 				32B3556A2B98BEC200740858 /* AnalyticsService.swift in Sources */,
 				3250F1922BAEFEB900A7DEB8 /* Constants.swift in Sources */,
 				32B354D72B98509D00740858 /* AppDependencies.swift in Sources */,
@@ -893,6 +900,7 @@
 				32B355682B98BEA500740858 /* AnalyticsEvent.swift in Sources */,
 				32B354DD2B98517F00740858 /* UserDefaultsDatasource.swift in Sources */,
 				3271871E2BB4868D00ECA2F3 /* OnboardingPageConfig.swift in Sources */,
+				2C5EC80A2BECCFE900085BC3 /* EditBookView.swift in Sources */,
 				3250F17F2BAEF0FC00A7DEB8 /* Banner.swift in Sources */,
 				32B354DB2B98514000740858 /* UserRepository.swift in Sources */,
 				3250F1772BAEC2E500A7DEB8 /* Card.swift in Sources */,
