@@ -8,13 +8,13 @@
 import SwiftData
 
 class SwiftDataDatasource {
-
+    
     var modelContainer: ModelContainer?
-
+    
     init() {
         self.modelContainer = getModelContainer()
     }
-
+    
     func getModelContainer() -> ModelContainer? {
         do {
             return try ModelContainer(
@@ -25,7 +25,7 @@ class SwiftDataDatasource {
             return nil
         }
     }
-
+    
     func getAll<T: PersistentModel>(type: T.Type) -> [T] {
         guard let modelContainer else { return [] }
         do {
@@ -37,7 +37,7 @@ class SwiftDataDatasource {
             return []
         }
     }
-
+    
     func create<T: PersistentModel>(type: T.Type, model: T) {
         guard let modelContainer else { return }
         do {
@@ -48,7 +48,7 @@ class SwiftDataDatasource {
             print(error)
         }
     }
-
+    
     func save<T: PersistentModel>(type: T.Type) {
         guard let modelContainer else { return }
         do {
@@ -58,10 +58,10 @@ class SwiftDataDatasource {
             print(error)
         }
     }
-
+    
     func delete<T: PersistentModel>(type: T.Type, model: T) {
         guard let modelContainer else { return }
         let modelContext = ModelContext(modelContainer)
         modelContext.delete(model)
-    }
+    }    
 }

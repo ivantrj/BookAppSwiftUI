@@ -52,9 +52,22 @@ struct EditBookView: View {
                 icon: Image(systemName: "square.and.arrow.down"),
                 title: "Save Changes"
             )
+            
+            Spacer()
+            
+            SailButton(
+                style: .secondary,
+                action: {
+                    viewModel.deleteBook()
+                    presentationMode.wrappedValue.dismiss()
+                },
+                icon: Image(systemName: "trash"),
+                title: "Delete Book"
+            )
         }
         .padding()
         .navigationTitle("Edit Book")
+        .navigationBarTitleDisplayMode(.automatic)
     }
 }
 

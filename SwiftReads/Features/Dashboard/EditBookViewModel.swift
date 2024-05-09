@@ -23,4 +23,8 @@ class EditBookViewModel: ObservableObject {
         book.status = selectedStatus
         bookRepository.save()
     }
+    
+    func deleteBook() {
+        bookRepository.delete(book: book)
+    }
 }
