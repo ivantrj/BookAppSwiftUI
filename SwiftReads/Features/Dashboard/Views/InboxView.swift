@@ -17,20 +17,18 @@ struct InboxView: View {
     @State private var isEditBookSheetPresented = false
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach(filteredBooks, id: \.id) { book in
-                        makeCard(image: "book", title: book.name, status: book.status)
-                            .onTapGesture {
-                                selectedBook = book
-                                isEditBookSheetPresented = true
-                            }
-                    }
-                    .onDelete(perform: deleteBook)
+        NavigationView {
+            List {
+                ForEach(filteredBooks) { book in
+                    BookCard(book: book)
+                        .onTapGesture {
+                            selectedBook = book
+                            isEditBookSheetPresented = true
+                        }
                 }
-                .padding(16)
+                .onDelete(perform: deleteBook)
             }
+            .listStyle(InsetListStyle())
             .navigationTitle("Inbox")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -65,16 +63,30 @@ struct InboxView: View {
         }
     }
     
-    private func makeCard(image: String, title: String, status: Status) -> some View {
+    private var filteredBooks: [Book] {
+        viewModel.books.filter { $0.status == .wantToRead }
+    }
+    
+    private func deleteBook(at offsets: IndexSet) {
+        for index in offsets {
+            viewModel.deleteBook(filteredBooks[index])
+        }
+    }
+}
+
+struct BookCard: View {
+    let book: Book
+    
+    var body: some View {
         VStack {
             HStack {
-                Image(systemName: image)
+                Image(systemName: "book")
                     .foregroundStyle(Asset.Colors.appPrimary.swiftUIColor)
-                Text(title)
+                Text(book.name)
                     .font(.title2)
                     .foregroundStyle(Color.black)
                 Spacer()
-                Text("\(status)")
+                Text("\(book.status)")
                     .font(.caption)
                 
             }
@@ -84,17 +96,6 @@ struct InboxView: View {
                     .fill(Asset.Colors.cardBackground.swiftUIColor)
                     .shadow(color: .black.opacity(0.1), radius: 8)
             )
-        }
-    }
-    
-    
-    private var filteredBooks: [Book] {
-        viewModel.books.filter { $0.status == .wantToRead }
-    }
-    
-    private func deleteBook(at offsets: IndexSet) {
-        for index in offsets {
-            viewModel.deleteBook(viewModel.books[index])
         }
     }
 }
