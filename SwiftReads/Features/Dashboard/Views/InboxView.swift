@@ -94,7 +94,7 @@ struct InboxView: View {
     
     private func deleteBook(at offsets: IndexSet) {
         for index in offsets {
-            viewModel.deleteBook(filteredBooks[index])
+            viewModel.deleteBook(viewModel.books[index])
         }
     }
 }

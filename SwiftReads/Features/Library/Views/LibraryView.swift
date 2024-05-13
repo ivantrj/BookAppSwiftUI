@@ -17,32 +17,34 @@ struct LibraryView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack {
-                    Picker(selection: $selectedOption, label: Text("Select Option")) {
-                        ForEach(filteredStatuses, id: \.self) { status in
-                            Text("\(status.status)").tag(status)
+        NavigationView {
+            VStack {
+                Picker(selection: $selectedOption, label: Text("Select Option")) {
+                    ForEach(filteredStatuses, id: \.self) { status in
+                        Text("\(status.status)").tag(status)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)], spacing: 16) {
+                        ForEach(filteredBooks) { book in
+                            BookRow(book: book)
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    
-                    
-                    ForEach(filteredBooks) { book in
-                        BookRow(book: book)
-                    }
-                    .padding()
+                    .padding(.horizontal)
+                    .padding(.bottom)
                 }
-                .padding()
             }
             .navigationTitle("Library")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(
-                trailing:
-                    Button {
-                    } label: {
-                        Image(systemName: "arrow.up.arrow.down")
-                    }
+            .navigationBarItems(trailing:
+                Button(action: {
+                    // Add action for trailing button if needed
+                }) {
+                    Image(systemName: "arrow.up.arrow.down")
+                }
             )
         }
     }
@@ -60,23 +62,30 @@ struct BookRow: View {
     let book: Book
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(book.name)
-                    .font(.headline)
-                Text(book.author)
-                    .font(.subheadline)
-                Text(book.genre)
-                    .font(.subheadline)
+        VStack(alignment: .leading, spacing: 8) {
+            Text(book.name)
+                .font(.headline)
+                .foregroundColor(.primary)
+            
+            Text("By \(book.author)")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            
+            Text(book.genre)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            
+            HStack {
+                Spacer()
+                Text("\(book.status)")
+                    .font(.caption)
+                    .foregroundColor(statusColor(for: book.status))
             }
-            Spacer()
-            //            Text(book.status)
-            //                .foregroundColor(statusColor(for: book.status))
         }
-        .padding()
+        .padding(12)
         .background(Color.secondary.opacity(0.1))
         .cornerRadius(10)
-        .padding(.vertical, 4)
+        .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
     }
     
     private func statusColor(for status: Status) -> Color {
@@ -90,9 +99,3 @@ struct BookRow: View {
         }
     }
 }
-
-
-//
-//#Preview {
-//    LibraryView()
-//}
